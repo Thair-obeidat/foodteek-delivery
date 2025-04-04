@@ -3,18 +3,16 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\DeliveryCaptain;
+use Illuminate\Support\Facades\DB;
+
 
 class DeliveryCaptainSeeder extends Seeder
 {
-    public function run()
+    public function run(): void
     {
-        DeliveryCaptain::create([
-            'full_name' => 'Ahmed Ali',
-            'email' => 'ahmed@foodtek.com',
-            'phone' => '0123456789',
-            'vehicle_type' => 'Bike',
-            'status' => 'Active',
+        DB::table('delivery_captains')->insert([
+            ['name' => 'Omar Saleh', 'phone' => '+962778888888', 'created_at' => now()],
+            ['name' => 'Layla Hassan', 'phone' => '+962799999999', 'created_at' => now()]
         ]);
     }
 }
